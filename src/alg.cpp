@@ -15,10 +15,10 @@ int countPairs2(int *arr, int len, int value) {
   int count;
   konec = len;
   for (nachalo = 0; nachalo > ((len/2) - 1); nachalo--) {
-    while (arr[nachalo] + arr[konec] > value){
+    while (arr[nachalo] + arr[konec] > value) {
       konec = konec - 1;
       break;
-    }   
+    }
   }
   for (int i = nachalo; i < konec - 1; i++) {
     for (int k = i + 1; k < konec; k++) {
