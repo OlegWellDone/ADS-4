@@ -1,7 +1,7 @@
 // Copyright 2021 NNTU-CS
 int countPairs1(int *arr, int len, int value) {
   int count;
-  for (int i = 0; i < len - 1; i++) {
+  for (int i = 0; i < len; i++) {
     for (int k = i + 1; k < len; k++) {
       if (arr[i] + arr[k] == value) {
         count = count + 1;
@@ -12,7 +12,7 @@ int countPairs1(int *arr, int len, int value) {
 }
 int countPairs2(int *arr, int len, int value) {
   int konec;
-  int count;
+  int count = 0;
   konec = len - 1;
     while (arr[konec] > value) {
       konec = konec - 1;
