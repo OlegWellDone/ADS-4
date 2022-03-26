@@ -21,14 +21,7 @@ int countPairs2(int *arr, int len, int value) {
       break;
     }
   }
-  for (int i = nachalo; i < konec - 1; i++) {
-    for (int k = i + 1; k < konec; k++) {
-      if (arr[i] + arr[k] == value) {
-        count = count + 1;
-      }
-    }
-  }
-
+count = countPairs1(arr, konec, value);
   return count;
 }
 
