@@ -15,8 +15,9 @@ int countPairs2(int *arr, int len, int value) {
   int count;
   konec = len;
   for (nachalo = 0; nachalo > ((len/2) - 1); nachalo--) {
-    while (arr[nachalo] + arr[konec] > value) {
+    if (arr[nachalo] + arr[konec] > value) {
       konec = konec - 1;
+    } else if (arr[nachalo] + arr[konec] = value) {
       break;
     }
   }
@@ -69,7 +70,7 @@ int cbinsearch(int *arr, int size, int value) {
 int countPairs3(int *arr, int len, int value) {
 int count = 0;
   for (int i = 0; i < len; i++) {
-   count = count +  cbinsearch(arr, len, value - arr[i]);
+   count = count + cbinsearch(arr, len, value - arr[i]);
   }
   return count;
 }
