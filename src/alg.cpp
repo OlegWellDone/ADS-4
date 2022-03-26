@@ -17,7 +17,7 @@ int countPairs2(int *arr, int len, int value) {
   for (nachalo = 0; nachalo > ((len/2) - 1); nachalo--) {
     if (arr[nachalo] + arr[konec] > value) {
       konec = konec - 1;
-    } else if (arr[nachalo] + arr[konec] = value) {
+    } else if (arr[nachalo] + arr[konec] == value) {
       break;
     }
   }
