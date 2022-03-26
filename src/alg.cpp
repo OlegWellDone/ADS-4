@@ -14,13 +14,9 @@ int countPairs2(int *arr, int len, int value) {
   int konec, nachalo;
   int count;
   konec = len;
-  for (nachalo = 0; nachalo > ((len/2) - 1); nachalo++) {
-    if (arr[nachalo] + arr[konec] > value) {
+    if (arr[konec] > value) {
       konec = konec - 1;
-    } else if (arr[nachalo] + arr[konec] == value) {
-      break;
     }
-  }
 count = countPairs1(arr, konec, value);
   return count;
 }
