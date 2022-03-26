@@ -33,6 +33,7 @@ int countPairs2(int *arr, int len, int value) {
 }
 int countPairs3(int *arr, int len, int value) {
   int i, j, k, mid, nachalo, value1;
+  nachalo = 0;
   while (arr[nachalo] < value) {
     value1 = value - arr[nachalo];
   i = 0;
