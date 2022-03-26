@@ -52,7 +52,7 @@ int countPairs3(int *arr, int len, int value) {
   i = nachalo;
   j = k - 1;
   count = 0;
-  mid = (j - 1) / 2;
+  int mid = (j - 1) / 2;
   for (arr[nachalo] < value; nachalo == (k - 1); nachalo++) {
     value1 = value - arr[nachalo];
     if (arr[j] == value1) {
