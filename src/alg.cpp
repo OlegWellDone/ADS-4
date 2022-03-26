@@ -59,7 +59,7 @@ int countPairs3(int *arr, int len, int value) {
       k = k + 1;
       i = i + 1;
       }
-}
-  nachalo = nachalo + 1;
+    nachalo = nachalo + 1;
+  }
   return k;
 }
