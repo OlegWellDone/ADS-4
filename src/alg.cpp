@@ -30,38 +30,19 @@ int countPairs2(int *arr, int len, int value) {
 
   return count;
 }
-int countPairs3(int *arr, int len, int value) {
-  int i, j, k, nachalo, value1, count;
-  nachalo = 0;
-  k = 0;
-  value1 = value - arr[nachalo];
-  i = nachalo;
-  j = len - 1;
-    while (i < j) {
-        int mid = i + (j - i) / 2;
-        if (arr[mid] == value1)
-            k = mid;
-        else if (arr[mid] > value1)
-            j = mid;
-        else
-            i = mid + 1;
-    }
-      while (arr[k + 1] == value1) {
-        k = k + 1;
-     }
-  i = nachalo;
-  j = k - 1;
-  count = 0;
+
+int cbinsearch(int *arr, int size, int value) {
+  int i = 0;
+  int j = size - 1;
+  int k = 0;
   int mid = (j - 1) / 2;
-  for (arr[nachalo] < value; nachalo == (k - 1); nachalo++) {
-    value1 = value - arr[nachalo];
-    if (arr[j] == value1) {
-      count = count + 1;
+    if (arr[j] == value) {
+      k = k + 1;
     }
-  while (arr[j] > value1) {
+  while (arr[j] > value) {
     mid = (j - 1) / 2;
-    if (arr[mid] == value1) {
-      count = count + 1;
+    if (arr[mid] == value) {
+      k = k + 1;
       j = mid;
       break;
     } else {
@@ -69,19 +50,26 @@ int countPairs3(int *arr, int len, int value) {
     }
   }
     i = 1;
-    while ((arr[j + i] == value1) && ((j + i) <= k)) {
-      count = count + 1;
+    while ((arr[j + i] == value) && ((j + i) <= size)) {
+      k = k + 1;
       i = i + 1;
       }
     i = 1;
-      while ((arr[j - i] == value1) && ((j - i) >= 0)) {
-      count = count + 1;
+      while ((arr[j - i] == value) && ((j - i) >= 0)) {
+      k = k + 1;
       i = i + 1;
       }
-}
-  if (count != 0) {
-    return count;
+  if (k != 0) {
+    return k;
   } else {
   return 0;
   }
+}
+
+int countPairs3(int *arr, int len, int value) {
+int count = 0;
+  for (int i = 0; i < len; i++) {
+   count = count +  cbinsearch(arr, len, value - arr[i]);
+  }
+  return count;
 }
