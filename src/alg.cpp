@@ -39,17 +39,15 @@ int countPairs3(int *arr, int len, int value) {
   j = len - 1;
   k = 0;
   mid = (j - 1) / 2;
-    while(i < j) {
+    while (i < j) {
         int mid = i + (j - i) / 2;
-        if(arr[mid] == value1)
+        if (arr[mid] == value1)
             k = k + 1;
-        else if(arr[mid] > value1)
+        else if (arr[mid] > value1)
             j = mid;
         else
             i = mid + 1;
     }
-}
-      }
     nachalo = nachalo + 1;
   }
   return k;
