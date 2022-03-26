@@ -21,8 +21,8 @@ count = countPairs1(arr, konec, value);
   return count;
 }
 
-int cbinsearch(int *arr, int size, int value) {
-  int i = 0;
+int cbinsearch(int *arr, int size, int value, int beg) {
+  int i = beg;
   int j = size - 1;
   int k = 0;
   int mid = (j - 1) / 2;
@@ -59,7 +59,7 @@ int cbinsearch(int *arr, int size, int value) {
 int countPairs3(int *arr, int len, int value) {
 int count = 0;
   for (int i = 0; i < len; i++) {
-  count = count + cbinsearch(arr, len, value - arr[i]);
+  count = count + cbinsearch(arr, len, value - arr[i], i);
   }
   return count;
 }
