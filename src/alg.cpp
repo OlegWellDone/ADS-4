@@ -11,14 +11,18 @@ int countPairs1(int *arr, int len, int value) {
   return count;
 }
 int countPairs2(int *arr, int len, int value) {
-  int konec, nachalo;
+  int konec;
   int count;
   konec = len;
     if (arr[konec] > value) {
       konec = konec - 1;
     }
-count = countPairs1(arr, konec, value);
-  return count;
+  for (int i = 0; i < konec; i++) {
+    for (int k = konec - 1; k > i; k--) {
+      if (arr[i] + arr[k] == value) {
+        count = count + 1;
+      }
+      return count;
 }
 
 int cbinsearch(int *arr, int size, int value, int beg) {
